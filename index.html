@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Liam Lucaciu | Prefect Portfolio</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #eef5ff;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,17,31,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #233653;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #69d5ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #b9c8dc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #69d5ff;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        radial-gradient(circle at 80% 20%, #123b5c 0, transparent 35%),
+        radial-gradient(circle at 20% 80%, #142a48 0, transparent 30%),
+        #07111f;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.status {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid #2d6680;
+    border-radius: 30px;
+    color: #69d5ff;
+    background: rgba(105,213,255,0.08);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 9vw, 100px);
+    line-height: 0.95;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #69d5ff;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 20px;
+    color: #b7c7da;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.primary {
+    background: #69d5ff;
+    color: #06101d;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 1px solid #35516f;
+    color: white;
+}
+
+.secondary:hover {
+    background: #10243a;
+}
+
+/* GENERAL */
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: #91a6bd;
+    margin-bottom: 40px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.stat {
+    background: #0d1b2e;
+    border: 1px solid #233b58;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: bold;
+    color: #69d5ff;
+}
+
+.stat p {
+    color: #91a6bd;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #0d1b2e;
+    border: 1px solid #233b58;
+    border-radius: 18px;
+    padding: 28px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #69d5ff;
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.card p {
+    color: #9fb1c7;
+}
+
+/* TIMELINE */
+
+.timeline {
+    border-left: 2px solid #31516f;
+    padding-left: 30px;
+    max-width: 850px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: #69d5ff;
+    border-radius: 50%;
+    left: -38px;
+    top: 7px;
+}
+
+.timeline-item span {
+    color: #69d5ff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.timeline-item h3 {
+    font-size: 25px;
+    margin: 4px 0;
+}
+
+.timeline-item p {
+    color: #9fb1c7;
+}
+
+/* VALUES */
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value {
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(145deg,#10243a,#0b1728);
+    border: 1px solid #294561;
+}
+
+.value h3 {
+    font-size: 28px;
+    color: #69d5ff;
+    margin-bottom: 10px;
+}
+
+.value p {
+    color: #a6b7ca;
+}
+
+/* CHALLENGE */
+
+.challenge {
+    max-width: 900px;
+    background: #0d1b2e;
+    border: 1px solid #294561;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.scenario {
+    background: #081523;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #c2d0df;
+}
+
+.choice {
+    width: 100%;
+    padding: 15px;
+    margin: 7px 0;
+    background: #12263d;
+    border: 1px solid #31516f;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.choice:hover {
+    border-color: #69d5ff;
+    background: #18334f;
+}
+
+#feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #233653;
+    color: #8296ad;
+}
+
+footer strong {
+    color: #69d5ff;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+    .dashboard,
+    .cards,
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">LIAM // PREFECT</div>
+
+    <div class="nav-links">
+        <a href="#about">Overview</a>
+        <a href="#experience">Experience</a>
+        <a href="#values">Values</a>
+        <a href="#approach">Approach</a>
+        <a href="#challenge">Challenge</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="status">
+            ● READY TO CONTRIBUTE
+        </div>
+
+        <h1>
+            Liam<br>
+            <span>Lucaciu</span>
+        </h1>
+
+        <p>
+            A digital portfolio for my Sherfield School prefect application.
+            Five years at Sherfield, experience working with different year
+            groups, and a willingness to take on a new challenge.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="#about">
+                Explore my portfolio →
+            </a>
+
+            <a class="button secondary" href="#challenge">
+                Try the challenge
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- OVERVIEW -->
+
+<section id="about">
+
+    <h2 class="section-title">Overview</h2>
+
+    <p class="section-subtitle">
+        What I would bring to the role of prefect.
+    </p>
+
+    <div class="dashboard">
+
+        <div class="stat">
+            <div class="stat-number">5+</div>
+            <p>Years at Sherfield School</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">1</div>
+            <p>Goal: contribute to school life</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">∞</div>
+            <p>Willingness to learn and improve</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <h2 class="section-title">My Experience</h2>
+
+    <p class="section-subtitle">
+        Experience that has helped prepare me for greater responsibility.
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <span>PAST</span>
+
+            <h3>Buckfield House Captain</h3>
+
+            <p>
+                I helped with house competitions, meetings and activities,
+                while working with students from different year groups.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <span>THEN</span>
+
+            <h3>Working With Others</h3>
+
+            <p>
+                I learned that different students communicate, participate
+                and respond to situations in different ways.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <span>NOW</span>
+
+            <h3>Ready for a New Challenge</h3>
+
+            <p>
+                I want to use what I have learned to contribute more widely
+                to the school community as a prefect.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VALUES -->
+
+<section id="values">
+
+    <h2 class="section-title">Sherfield's Core Values</h2>
+
+    <p class="section-subtitle">
+        These are Sherfield School's core values. As a prefect,
+        I would aim to represent them in the way I work with others.
+    </p>
+
+    <div class="values">
+
+        <div class="value">
+            <h3>RESPECT</h3>
+            <p>
+                Treating students and staff fairly, listening to different
+                perspectives and recognising that everyone is different.
+            </p>
+        </div>
+
+        <div class="value">
+            <h3>KINDNESS</h3>
+            <p>
+                Helping people feel welcomed, supported and included,
+                particularly students who may be less confident.
+            </p>
+        </div>
+
+        <div class="value">
+            <h3>COURAGE</h3>
+            <p>
+                Being willing to step forward, take responsibility,
+                try new things and learn from mistakes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPROACH -->
+
+<section id="approach">
+
+    <h2 class="section-title">What I Would Bring</h2>
+
+    <p class="section-subtitle">
+        Three areas I would focus on as a prefect.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🤝</div>
+
+            <h3>Support</h3>
+
+            <p>
+                I would try to make younger students feel comfortable
+                approaching me if they need help or someone to talk to.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🌍</div>
+
+            <h3>Inclusion</h3>
+
+            <p>
+                I would encourage students who are less confident to
+                participate and make sure different people have
+                opportunities to get involved.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">⚡</div>
+
+            <h3>Responsibility</h3>
+
+            <p>
+                I would help with school events and activities and take
+                responsibility for the role I am given.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CHALLENGE -->
+
+<section id="challenge">
+
+    <h2 class="section-title">Prefect Decision Challenge</h2>
+
+    <p class="section-subtitle">
+        What would you do?
+    </p>
+
+    <div class="challenge">
+
+        <h3>
+            A younger student is standing alone during a school event.
+            They look unsure about joining in.
+        </h3>
+
+        <div class="scenario">
+            You notice that they don't seem to know anyone nearby.
+            You have several options.
+        </div>
+
+        <button class="choice" onclick="answer(1)">
+            A — Walk past because they haven't asked for help.
+        </button>
+
+        <button class="choice" onclick="answer(2)">
+            B — Approach them, introduce yourself and ask if they
+            would like help getting involved.
+        </button>
+
+        <button class="choice" onclick="answer(3)">
+            C — Immediately tell another student to deal with it.
+        </button>
+
+        <div id="feedback"></div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL MESSAGE -->
+
+<section>
+
+    <div class="challenge">
+
+        <h2>Why Prefect?</h2>
+
+        <br>
+
+        <p style="color:#a6b7ca;">
+            I know I will not get everything right immediately.
+            I will make mistakes, listen to advice and learn from them.
+            What matters to me is being willing to improve and contribute
+            positively to school life.
+        </p>
+
+        <br>
+
+        <p style="color:#69d5ff; font-weight:bold;">
+            Respect • Kindness • Courage
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>Liam Lucaciu</strong>
+    </p>
+
+    <p>
+        Sherfield School · Prefect Application
+    </p>
+
+    <p style="margin-top:10px;">
+        Built as a digital portfolio to demonstrate initiative and technology.
+    </p>
+
+</footer>
+
+
+<!-- INTERACTIVE JAVASCRIPT -->
+
+<script>
+
+function answer(choice) {
+
+    const feedback = document.getElementById("feedback");
+
+    feedback.style.display = "block";
+
+    if (choice === 1) {
+
+        feedback.innerHTML =
+        "Think again. A prefect can sometimes notice when someone needs support before they ask.";
+
+    }
+
+    if (choice === 2) {
+
+        feedback.innerHTML =
+        "Good choice. Approaching them respectfully and offering support gives them the opportunity to get involved without putting pressure on them.";
+
+    }
+
+    if (choice === 3) {
+
+        feedback.innerHTML =
+        "Delegating can sometimes help, but taking the first step yourself can make the student feel more welcomed and supported.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
